@@ -1,0 +1,7 @@
+My_first_module.hero_file:
+  path: '/hero-file'
+  defaults:
+    _controller: '\Drupal\My_first_module\Controller\Hello1Controller::herolist'
+    _title: 'Our Super hero list!'
+  requirements:
+    _permission: 'access content'

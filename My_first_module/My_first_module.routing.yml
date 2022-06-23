@@ -5,3 +5,11 @@ My_first_module.hero_file:
     _title: 'Our Super hero list!'
   requirements:
     _permission: 'access content'
+
+My_first_module.custom_file:
+  path: '/custom-file'
+  defaults:
+    _controller: '\Drupal\My_first_module\Controller\CustomController::Customnode'
+    _title: 'My new custom node'
+  requirements:
+    _permission: 'access content'

@@ -1,28 +1,17 @@
 <?php
 namespace Drupal\My_first_module\Controller;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\node\Entity\Node;
 class Hello1Controller extends ControllerBase {
     public function herolist() {
-        $hero = [
-            ['name' => 'Green Lantern'],
-            ['name' => 'Captain America'],
-            ['name' => 'Wonder Woman'],
-            ['name' => 'Iron Man'],
-            ['name' => 'Wolverine'],
-            ['name' => 'Superman'],
-            ['name' => 'Spider-Man'],
-            ['name' => 'Batman']
-            
-        ];
-        $ourheroes = '';
-        foreach ($hero as $i)
-        {
-        $ourheroes .= '<li>' . $i['name'] . '</li>' ;
-        } 
+        // for Node creating 
+        $node = Node::create(['type' => 'article']);
+        $node->title= 'My First Article';
+        $node->body = 'This is my first Node of article';
+        $node->save();
 
         return [
-            '#type' => 'markup',
-            '#markup' => '<ul>' . $ourheroes . '</ul>',
+            '#markup' => $this->t('Node is created successfully'),
         ];
 
     }
